@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "Route 159";
+  src: url("route-159/Web Font/Route159-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Route 159";
+  src: url("route-159/Web Font/Route159-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Route 159";
+  src: url("route-159/Web Font/Route159-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Route 159";
+  src: url("route-159/Web Font/Route159-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Route 159";
+  src: url("route-159/Web Font/Route159-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* https://brand.nixos.org/documents/nixos-branding-guide.pdf */
+:root {
+  --bg-color: #fcfcfc;
+  --text-color: #202020;
+  --accent-color: #5fb8f2;
+  --accent-soft: #f0f4f8;
+  --accent-hover: #4d6fb7;
+  --font-family: "Route 159", "Charter", "Bitstream Charter", "Sitka Text", "Cambria", serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/favicon.svg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 95vh;
+  opacity: 0.03;
+  z-index: -1;
+  pointer-events: none;
+}
+
+main {
+  max-width: 760px;
+  width: 90%;
+  margin: 5rem 1rem;
+}
+
+header {
+  border-bottom: 3px double var(--accent-color);
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* Button Links */
+.links {
+  display: flex;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.links a {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+}
+
+.links a:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.links a:active {
+  transform: translateY(0);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 140px 280px 1fr;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #eee;
+  align-items: baseline;
+}
+
+.timeline li:last-child {
+  border-bottom: none;
+}
+
+.event-date {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #777;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.event-location {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.event-special {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 5rem 0 3rem 0;
+}
+
+/* Footer Layout */
+.footer-container {
+  margin-bottom: 5rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.icon-matrix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon-matrix img {
+  image-rendering: pixelated;
+}
+
+.footer-links a {
+  color: #777;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* 8-Ball */
+details.magic-8-ball {
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  border-top: 1px dashed #ddd;
+  padding-top: 1.5rem;
+}
+
+details.magic-8-ball summary {
+  list-style: none;
+  font-style: italic;
+  color: #666;
+  font-size: 1rem;
+  outline: none;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+details.magic-8-ball summary:hover {
+  color: var(--accent-color);
+}
+
+details.magic-8-ball summary::-webkit-details-marker {
+  display: none;
+}
+
+.ball-answer {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--accent-soft);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  text-align: center;
+  border: 1px solid #e1e8f0;
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ball-answer strong {
+  color: var(--accent-color);
+}
+
+.ball-answer a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.event-location a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.event-location a:hover {
+  border-bottom-color: var(--accent-color);
+  color: var(--accent-color);
+}
